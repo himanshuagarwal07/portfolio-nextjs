@@ -1,0 +1,214 @@
+{
+  "hero": {
+    "eyebrow": "Words that work",
+    "firstName": "Supradarsana",
+    "lastName": "Chanda",
+    "tagline": "Turning complex ideas into stories people actually read.",
+    "description": "Technical writer, SaaS storyteller, lifestyle essayist, and jewellery blogger — with a love for language that spans industries, tones, and formats.",
+    "roles": [
+      "Technical Writing",
+      "SaaS Content",
+      "Creative Writing",
+      "Storytelling",
+      "Lifestyle Blogs",
+      "Jewellery Content"
+    ],
+    "ctaPrimary": "See my work",
+    "ctaSecondary": "Let's collaborate"
+  },
+  "about": {
+    "quote": "Good writing is invisible. It simply takes you somewhere — and leaves you glad you went.",
+    "paragraphs": [
+      "I'm a Technical Content Writer based in Jaipur, India, with a career that spans documentation, SaaS narratives, bid writing, and deeply personal creative work — from jewellery diaries to lifestyle essays.",
+      "What ties it all together is a belief that every reader deserves clarity. Whether I'm documenting a software workflow, crafting a SaaS onboarding guide, or telling the story behind a handcrafted ring, I write with precision and heart.",
+      "Currently working at Natural Support Consultancy Services, I've previously shaped content at Nimble AppGenie, Tagbox, Quirinus Soft, and R-DGTL."
+    ],
+    "stats": [
+      {
+        "id": 1,
+        "num": "5+",
+        "label": "Years of experience"
+      },
+      {
+        "id": 2,
+        "num": "6",
+        "label": "Industries covered"
+      },
+      {
+        "id": 3,
+        "num": "5",
+        "label": "Companies worked with"
+      }
+    ]
+  },
+  "expertise": [
+    {
+      "id": 1,
+      "icon": "📋",
+      "title": "Technical Writer",
+      "desc": "SRS documents, user manuals, API guides, SOPs — I make complex systems legible without losing a single technical detail."
+    },
+    {
+      "id": 2,
+      "icon": "🚀",
+      "title": "SaaS Writer",
+      "desc": "Product tours, onboarding flows, release notes, and help docs that reduce churn and grow product confidence."
+    },
+    {
+      "id": 3,
+      "icon": "✍️",
+      "title": "Creative Writer",
+      "desc": "Essays, short fiction, character studies, and narratives that linger — writing made to be felt, not just read."
+    },
+    {
+      "id": 4,
+      "icon": "📖",
+      "title": "Storyteller",
+      "desc": "Brand narratives, pitch stories, campaign copy — I find the human thread in every business and pull it into the light."
+    },
+    {
+      "id": 5,
+      "icon": "🌿",
+      "title": "Lifestyle Blogger",
+      "desc": "Wellness, travel, culture, personal growth — warm, conversational writing that builds loyal, returning audiences."
+    },
+    {
+      "id": 6,
+      "icon": "💎",
+      "title": "Jewellery Writer",
+      "desc": "Product descriptions, lookbooks, heritage stories, and trend pieces for jewellery brands that want to sell beauty, not just metal."
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1,
+      "category": "technical",
+      "tag": "Technical Writing",
+      "title": "User Guide for a Document Management System",
+      "excerpt": "End-to-end SRS and user documentation covering workflows, role permissions, and edge cases — written for non-technical end users without sacrificing accuracy.",
+      "content": "Full article content goes here. This is where the detailed write-up of the piece would appear.",
+      "link": "#",
+      "date": "2026-01-15",
+      "published": true
+    },
+    {
+      "id": 2,
+      "category": "saas",
+      "tag": "SaaS Content",
+      "title": "Onboarding Guide: From Sign-Up to First Win",
+      "excerpt": "A step-by-step onboarding sequence for a photo management SaaS, reducing time-to-value for new users through plain-language instructions and contextual tips.",
+      "content": "Full article content goes here. This is where the detailed write-up of the piece would appear.",
+      "link": "#",
+      "date": "2026-02-03",
+      "published": true
+    },
+    {
+      "id": 3,
+      "category": "saas",
+      "tag": "SaaS Content",
+      "title": "Feature Announcement: Collaborative Tagging 2.0",
+      "excerpt": "A product blog post that turns a technical feature update into a compelling user benefit story — driving adoption without a single line of jargon.",
+      "content": "Full article content goes here. This is where the detailed write-up of the piece would appear.",
+      "link": "#",
+      "date": "2026-02-20",
+      "published": true
+    },
+    {
+      "id": 4,
+      "category": "creative",
+      "tag": "Creative Writing",
+      "title": "The City That Only Exists at Night",
+      "excerpt": "A short personal essay on the quiet intimacy of a city after midnight — the streets, the strangers, the strange sense of ownership one feels at 2 a.m.",
+      "content": "Full article content goes here. This is where the detailed write-up of the piece would appear.",
+      "link": "#",
+      "date": "2026-03-10",
+      "published": true
+    },
+    {
+      "id": 5,
+      "category": "lifestyle",
+      "tag": "Lifestyle Blog",
+      "title": "The Art of Doing Nothing Intentionally",
+      "excerpt": "A warm, essay-style blog post exploring the radical act of rest in a culture obsessed with productivity — published on a wellness platform with 20K monthly readers.",
+      "content": "Full article content goes here. This is where the detailed write-up of the piece would appear.",
+      "link": "#",
+      "date": "2026-04-05",
+      "published": true
+    },
+    {
+      "id": 6,
+      "category": "jewellery",
+      "tag": "Jewellery Writing",
+      "title": "The Language of Gold: A Heritage Collection Story",
+      "excerpt": "Brand storytelling for a Jaipur-based jeweller's heritage line — tracing the craft lineage of each piece and weaving cultural memory into product descriptions.",
+      "content": "Full article content goes here. This is where the detailed write-up of the piece would appear.",
+      "link": "#",
+      "date": "2026-05-12",
+      "published": true
+    },
+    {
+      "id": 7,
+      "title": "Instagram Reels Algorithm in 2026: How It Works & It's Benefits",
+      "category": "technical",
+      "tag": "Taggbox Blog",
+      "excerpt": "Master the Instagram Reels algorithm in 2026 with smart strategies. Boost your reach, grow your audience, and make your content stand out!",
+      "content": "",
+      "link": "https://taggbox.com/blog/instagram-reels-algorithm/",
+      "date": "2026-06-27",
+      "published": true
+    }
+  ],
+  "process": [
+    {
+      "id": 1,
+      "num": "01",
+      "name": "Listen",
+      "desc": "I start by understanding your audience, tone, purpose, and the gap between where your content is and where it needs to be."
+    },
+    {
+      "id": 2,
+      "num": "02",
+      "name": "Research",
+      "desc": "Deep dives into your product, industry, or subject — so I write with authority, not guesswork."
+    },
+    {
+      "id": 3,
+      "num": "03",
+      "name": "Craft",
+      "desc": "Draft, refine, read aloud, rewrite. Every sentence earns its place before you see it."
+    },
+    {
+      "id": 4,
+      "num": "04",
+      "name": "Refine",
+      "desc": "Two revision rounds included as standard. Feedback welcomed — great writing is always collaborative."
+    }
+  ],
+  "tools": [
+    "MS Word",
+    "Confluence",
+    "Notion",
+    "Jira",
+    "Figma",
+    "Google Docs",
+    "Grammarly",
+    "Hemingway Editor",
+    "WordPress",
+    "Canva",
+    "Trello",
+    "Slack"
+  ],
+  "contact": {
+    "label": "Get in touch",
+    "title": "Let's make something worth reading.",
+    "subtitle": "Open to freelance projects, full-time roles, and collaborations of all kinds.",
+    "email": "your@email.com",
+    "linkedin": "https://linkedin.com/in/yourprofile",
+    "cvUrl": "/cv.pdf"
+  },
+  "footer": {
+    "name": "Supradarsana Chanda",
+    "location": "Jaipur, India",
+    "availability": "Available for projects"
+  }
+}
