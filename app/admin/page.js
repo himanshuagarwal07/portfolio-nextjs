@@ -11,6 +11,7 @@ const NAV = [
   { key: 'process',   label: 'Process',   icon: '◷' },
   { key: 'contact',   label: 'Contact',   icon: '◉' },
   { key: 'footer',    label: 'Footer',    icon: '◻' },
+  { key: 'colors',    label: 'Colors',    icon: '◑' },
   { key: 'blogs',     label: 'Blogs',     icon: '✎' },
 ];
 
@@ -206,6 +207,7 @@ export default function AdminPage() {
                                                   saving={saving} />}
         {tab === 'contact'   && <ContactSection   data={content.contact}   onSave={(v) => saveSection('contact', v)}   saving={saving} />}
         {tab === 'footer'    && <FooterSection    data={content.footer}    onSave={(v) => saveSection('footer', v)}    saving={saving} />}
+        {tab === 'colors'    && <ColorsSection    data={content.colors}    onSave={(v) => saveSection('colors', v)}    saving={saving} />}
         {tab === 'blogs'     && (
           <BlogsSection
             blogs={content.blogs || []}
@@ -497,6 +499,70 @@ function ContactSection({ data, onSave, saving }) {
           <input className="form-input" value={d.cvUrl} onChange={(e) => set('cvUrl', e.target.value)} placeholder="https://... or /cv.pdf" />
         </div>
       </div>
+    </div>
+  );
+}
+
+/* ════════════════════════════════════════════════════
+   COLORS SECTION
+════════════════════════════════════════════════════ */
+const COLOR_FIELDS = [
+  { key: 'heroFirst',  label: 'First name color',           hint: 'e.g. Supradarsana' },
+  { key: 'heroLast',   label: 'Last name color (italic)',   hint: 'e.g. Chanda' },
+  { key: 'primary',    label: 'Primary color',              hint: 'Buttons, highlights, progress bar' },
+  { key: 'accent',     label: 'Accent / link color',        hint: 'Nav links, badges, view-blog button' },
+  { key: 'background', label: 'Page background color',      hint: 'Main cream/white background' },
+];
+
+function ColorsSection({ data, onSave, saving }) {
+  const defaults = {
+    heroFirst: '#2C5545', heroLast: '#4E78B8',
+    primary: '#C4607A', accent: '#4E78B8', background: '#FDF2F6',
+  };
+  const [d, setD] = useState({ ...defaults, ...(data || {}) });
+  const set = (k, v) => setD((p) => ({ ...p, [k]: v }));
+
+  return (
+    <div className="admin-section">
+      <div className="admin-section-header">
+        <h2 className="admin-section-title">Colors</h2>
+        <SaveBtn onClick={() => onSave(d)} saving={saving} />
+      </div>
+      <p style={{ fontSize: '13px', color: 'var(--ink-muted)', marginBottom: '2rem', lineHeight: 1.6 }}>
+        Changes take effect immediately on the live site. Click a color swatch to open the color picker, or type a hex code directly.
+      </p>
+      {COLOR_FIELDS.map(({ key, label, hint }) => (
+        <div key={key} className="form-group color-field-row">
+          <label className="form-label">{label}</label>
+          <p style={{ fontSize: '11px', color: 'var(--ink-muted)', marginBottom: '8px', marginTop: '-2px' }}>{hint}</p>
+          <div className="color-input-row">
+            <input
+              type="color"
+              value={d[key] || defaults[key]}
+              onChange={(e) => set(key, e.target.value)}
+              className="color-swatch-input"
+              title="Click to pick a color"
+            />
+            <input
+              type="text"
+              className="form-input"
+              value={d[key] || defaults[key]}
+              onChange={(e) => set(key, e.target.value)}
+              placeholder="#000000"
+              style={{ fontFamily: 'monospace', maxWidth: '140px' }}
+            />
+            <span className="color-preview-box" style={{ background: d[key] || defaults[key] }} />
+            <button
+              className="btn-cancel"
+              style={{ fontSize: '11px', padding: '8px 14px' }}
+              onClick={() => set(key, defaults[key])}
+              title="Reset to default"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

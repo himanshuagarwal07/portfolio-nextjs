@@ -210,5 +210,12 @@
     "name": "Supradarsana Chanda",
     "location": "Jaipur, India",
     "availability": "Available for projects"
+  },
+  "colors": {
+    "heroFirst": "#2C5545",
+    "heroLast": "#4E78B8",
+    "primary": "#C4607A",
+    "accent": "#4E78B8",
+    "background": "#FDF2F6"
   }
 }

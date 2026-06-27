@@ -6,13 +6,19 @@
   --ink-muted:  #A090B0;
   --cream:      #FDF2F6;
   --warm-white: #EFF6FF;
-  --gold:       #C4607A;
-  --gold-pale:  #FDEAF0;
-  --accent:     #4E78B8;
+  --gold:       var(--c-primary, #C4607A);
+  --gold-pale:  color-mix(in srgb, var(--c-primary, #C4607A) 10%, #fff);
+  --accent:     var(--c-accent, #4E78B8);
   --border:     rgba(180,100,140,0.15);
   --serif:      var(--font-serif, 'Cormorant Garamond'), Georgia, serif;
   --sans:       var(--font-sans, 'DM Sans'), system-ui, sans-serif;
   --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+  /* Customizable via admin Colors section */
+  --c-hero-first: #2C5545;
+  --c-hero-last:  #4E78B8;
+  --c-primary:    #C4607A;
+  --c-accent:     #4E78B8;
+  --c-bg:         #FDF2F6;
 }
 
 html { scroll-behavior: smooth; }
@@ -162,12 +168,12 @@ nav.scrolled {
   font-weight: 400;
   line-height: 0.9;
   letter-spacing: -0.02em;
-  color: var(--ink);
+  color: var(--c-hero-first);
   margin-bottom: 1.75rem;
 }
 .hero-name em {
   font-style: italic;
-  color: var(--accent);
+  color: var(--c-hero-last);
   display: block;
 }
 
@@ -1069,6 +1075,27 @@ footer {
   color: var(--ink-muted);
 }
 .card-editor .btn-remove-item { margin-top: 0; }
+
+/* Color picker */
+.color-field-row { margin-bottom: 1.5rem; }
+.color-input-row {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.color-swatch-input {
+  width: 44px; height: 44px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 2px;
+  cursor: pointer;
+  background: none;
+  flex-shrink: 0;
+}
+.color-preview-box {
+  width: 44px; height: 44px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
 
 /* CV Upload */
 .cv-upload-box {
