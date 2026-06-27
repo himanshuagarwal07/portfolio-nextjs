@@ -174,7 +174,7 @@ export default function AdminPage() {
       {/* ── Sidebar ── */}
       <aside className="admin-sidebar">
         <div className="admin-sidebar-brand">Portfolio<br /><span>Admin</span></div>
-        <nav className="admin-sidebar-nav">
+        <div className="admin-sidebar-nav">
           {NAV.map((n) => (
             <button
               key={n.key}
@@ -185,7 +185,7 @@ export default function AdminPage() {
               {n.label}
             </button>
           ))}
-        </nav>
+        </div>
         <div className="admin-sidebar-footer">
           <Link href="/" className="admin-nav-item" style={{ textDecoration: 'none' }}>
             <span className="admin-nav-icon">↗</span> View Site
@@ -425,7 +425,30 @@ function ProcessSection({ data, onSave, saving }) {
 ════════════════════════════════════════════════════ */
 function ContactSection({ data, onSave, saving }) {
   const [d, setD] = useState(data);
+  const [uploading, setUploading] = useState(false);
+  const [uploadMsg, setUploadMsg] = useState('');
   const set = (k, v) => setD((p) => ({ ...p, [k]: v }));
+
+  async function handleCvUpload(e) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    setUploadMsg('');
+    try {
+      const form = new FormData();
+      form.append('file', file);
+      const res = await fetch('/api/upload-cv', { method: 'POST', body: form });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || 'Upload failed');
+      set('cvUrl', json.url);
+      setUploadMsg('✓ Uploaded: ' + file.name);
+    } catch (err) {
+      setUploadMsg('✗ ' + err.message);
+    } finally {
+      setUploading(false);
+      e.target.value = '';
+    }
+  }
 
   return (
     <div className="admin-section">
@@ -440,7 +463,40 @@ function ContactSection({ data, onSave, saving }) {
         <Field label="Email address"><input className="form-input" type="email" value={d.email} onChange={(e) => set('email', e.target.value)} /></Field>
         <Field label="LinkedIn URL"><input className="form-input" value={d.linkedin} onChange={(e) => set('linkedin', e.target.value)} /></Field>
       </div>
-      <Field label="CV / Resume URL (upload file to /public then link it)"><input className="form-input" value={d.cvUrl} onChange={(e) => set('cvUrl', e.target.value)} placeholder="/cv.pdf" /></Field>
+
+      <div className="form-group">
+        <label className="form-label">CV / Resume</label>
+        <div className="cv-upload-box">
+          <div className="cv-upload-left">
+            <label className="btn-upload-cv" style={{ opacity: uploading ? 0.6 : 1 }}>
+              {uploading ? 'Uploading…' : '⬆ Upload CV file'}
+              <input
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={handleCvUpload}
+                disabled={uploading}
+                style={{ display: 'none' }}
+              />
+            </label>
+            <span className="cv-upload-hint">PDF, DOC, DOCX · max 5 MB</span>
+          </div>
+          {d.cvUrl && (
+            <a href={d.cvUrl} target="_blank" rel="noopener noreferrer" className="cv-current-link">
+              ↗ View current CV
+            </a>
+          )}
+        </div>
+        {uploadMsg && (
+          <p style={{
+            fontSize: '12px', marginTop: '8px',
+            color: uploadMsg.startsWith('✓') ? '#065f46' : '#b91c1c'
+          }}>{uploadMsg}</p>
+        )}
+        <div style={{ marginTop: '10px' }}>
+          <label className="form-label" style={{ fontSize: '10px' }}>Or paste a direct URL</label>
+          <input className="form-input" value={d.cvUrl} onChange={(e) => set('cvUrl', e.target.value)} placeholder="https://... or /cv.pdf" />
+        </div>
+      </div>
     </div>
   );
 }
